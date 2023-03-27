@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "435456467409",
+    "project_id": "prove-of-concepts",
+    "storage_bucket": "prove-of-concepts.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:435456467409:android:194fef9b4018b1d8b700f0",
+        "android_client_info": {
+          "package_name": "com.example.cloudfirestore_with_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "435456467409-2r7pfquga7ooeu3p6nj92b7b90nmdrtp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqhOzsXIrBuGqfXZFxkLMj01KioX6jPP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "435456467409-2r7pfquga7ooeu3p6nj92b7b90nmdrtp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
