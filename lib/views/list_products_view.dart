@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloudfirestore_with_flutter/models/product.dart';
+import 'package:cloudfirestore_with_flutter/views/new_product.dart';
 import 'package:flutter/material.dart';
 
 class ListProductsView extends StatefulWidget {
@@ -36,6 +37,7 @@ class _ListProductsViewState extends State<ListProductsView> {
     });
   }
 
+  @override
   void dispose() {
     productsSubscription?.cancel();
     super.dispose();
@@ -67,7 +69,7 @@ class _ListProductsViewState extends State<ListProductsView> {
                           style: const TextStyle(fontSize: 22),
                         ),
                         subtitle: Text(
-                          productsList[index].price.toString(),
+                          productsList[index].price!,
                           style: const TextStyle(fontSize: 22),
                         ),
                         leading: Column(
@@ -81,11 +83,45 @@ class _ListProductsViewState extends State<ListProductsView> {
                             )
                           ],
                         ),
+                        onTap: () =>
+                            _navigateToProduct(context, productsList[index]),
                       );
                     },
                   );
               }
             },
+          ),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => _createNewProduct(
+          context,
+          Product(),
+        ),
+      ),
+    );
+  }
+
+  void _navigateToProduct(BuildContext context, Product product) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NewProduct(
+          product: product,
+        ),
+      ),
+    );
+  }
+
+  void _createNewProduct(BuildContext context, Product product) async {
+    await Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => NewProduct(
+          product: Product(
+            id: null,
+            name: "",
+            price: "",
           ),
         ),
       ),

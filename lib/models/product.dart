@@ -1,7 +1,7 @@
 class Product {
   String? id;
   String? name;
-  double? price;
+  String? price;
 
   Product({this.id, this.name, this.price});
 
@@ -21,8 +21,8 @@ class Product {
     return map;
   }
 
-  Product.fromMap(Map<String, dynamic> map, String? id) {
-    id = id ?? '';
+  Product.fromMap(Map<String, dynamic> map, String? documentId) {
+    id = documentId ?? '';
     name = map['name'];
     price = map['price'];
   }
