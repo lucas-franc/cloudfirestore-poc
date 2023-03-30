@@ -21,7 +21,7 @@ class Product {
     return map;
   }
 
-  Product.fromMap(Map<String, dynamic> map) {
+  Product.fromMap(Map<String, dynamic> map, String? id) {
     id = id ?? '';
     name = map['name'];
     price = map['price'];
